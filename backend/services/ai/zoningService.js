@@ -1,24 +1,22 @@
 import Property from '../../models/Property.js';
-import openai from '../../config/openai.js';
+import anthropic from '../../config/openai.js';
 import { zoningPrompt } from '../../utils/prompts.js';
 
 export const analyzeZoning = async (propertyId) => {
   const property = await Property.findById(propertyId);
-  
-  const response = await openai.chat.completions.create({
-    model: "gpt-4-turbo",
-    response_format: { type: "json_object" },
+
+  const response = await anthropic.messages.create({
+    model: 'claude-sonnet-4-20250514',
+    max_tokens: 1024,
     messages: [{
-      role: "user",
-      content: zoningPrompt(property) // Predefined prompt
+      role: 'user',
+      content: zoningPrompt(property)
     }]
   });
 
-  const result = JSON.parse(response.choices[0].message.content);
-  
-  await Property.findByIdAndUpdate(propertyId, {
-    'aiAnalysis.zoningRecommendations': result.recommendations
-  });
+  const rawText = response.content[0].text.trim();
+  const cleaned = rawText.replace(/^```json\n?/, '').replace(/\n?```$/, '').trim();
+  const result = JSON.parse(cleaned);
 
   return result;
 };

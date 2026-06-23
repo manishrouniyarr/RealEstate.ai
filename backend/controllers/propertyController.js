@@ -1,60 +1,69 @@
-// controllers/propertyController.js
-import Property from '../models/Property.js';
+import { pool } from '../config/db.js';
 
-// Get all properties
-export const getProperties = async (req, res) => {
+export const getAllProperties = async (req, res) => {
   try {
-    const properties = await Property.find();
-    res.json(properties);
+    const { city, property_type, price_type, min_price, max_price, bedrooms } = req.query;
+
+    let query = 'SELECT * FROM properties WHERE 1=1';
+    const params = [];
+    let i = 1;
+
+    if (city) {
+      query += ` AND LOWER(city) LIKE LOWER($${i++})`;
+      params.push(`%${city}%`);
+    }
+    if (property_type) {
+      query += ` AND LOWER(property_type) = LOWER($${i++})`;
+      params.push(property_type);
+    }
+    if (price_type) {
+      query += ` AND price_type = $${i++}`;
+      params.push(price_type);
+    }
+    if (min_price) {
+      query += ` AND price >= $${i++}`;
+      params.push(min_price);
+    }
+    if (max_price) {
+      query += ` AND price <= $${i++}`;
+      params.push(max_price);
+    }
+    if (bedrooms) {
+      query += ` AND bedrooms = $${i++}`;
+      params.push(bedrooms);
+    }
+
+    query += ' ORDER BY is_featured DESC, created_at DESC';
+
+    const result = await pool.query(query, params);
+    res.json({ success: true, count: result.rows.length, properties: result.rows });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ error: error.message });
   }
 };
 
-// Get single property
-export const getProperty = async (req, res) => {
+export const getPropertyById = async (req, res) => {
   try {
-    const property = await Property.findById(req.params.id);
-    if (!property) return res.status(404).json({ message: 'Property not found' });
-    res.json(property);
+    const { id } = req.params;
+    const result = await pool.query('SELECT * FROM properties WHERE id = $1', [id]);
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: 'Property not found' });
+    }
+
+    res.json({ success: true, property: result.rows[0] });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ error: error.message });
   }
 };
 
-// Create property
-export const createProperty = async (req, res) => {
+export const getFeaturedProperties = async (req, res) => {
   try {
-    const property = new Property(req.body);
-    const savedProperty = await property.save();
-    res.status(201).json(savedProperty);
-  } catch (error) {
-    res.status(400).json({ message: error.message });
-  }
-};
-
-// Update property
-export const updateProperty = async (req, res) => {
-  try {
-    const property = await Property.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
+    const result = await pool.query(
+      'SELECT * FROM properties WHERE is_featured = true ORDER BY created_at DESC'
     );
-    if (!property) return res.status(404).json({ message: 'Property not found' });
-    res.json(property);
+    res.json({ success: true, properties: result.rows });
   } catch (error) {
-    res.status(400).json({ message: error.message });
-  }
-};
-
-// Delete property
-export const deleteProperty = async (req, res) => {
-  try {
-    const property = await Property.findByIdAndDelete(req.params.id);
-    if (!property) return res.status(404).json({ message: 'Property not found' });
-    res.json({ message: 'Property deleted successfully' });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ error: error.message });
   }
 };

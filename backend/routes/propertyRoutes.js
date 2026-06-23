@@ -1,24 +1,14 @@
-// routes/propertyRoutes.js
 import express from 'express';
 import {
-  getProperties,
-  createProperty,
-  getProperty,
-  updateProperty,
-  deleteProperty
+  getAllProperties,
+  getPropertyById,
+  getFeaturedProperties,
 } from '../controllers/propertyController.js';
 
 const router = express.Router();
 
-// Base route: /api/properties
-router.route('/')
-  .get(getProperties)
-  .post(createProperty);
-
-// ID-specified routes
-router.route('/:id')
-  .get(getProperty)
-  .put(updateProperty)
-  .delete(deleteProperty);
+router.get('/', getAllProperties);
+router.get('/featured', getFeaturedProperties);
+router.get('/:id', getPropertyById);
 
 export { router as propertyRoutes };
