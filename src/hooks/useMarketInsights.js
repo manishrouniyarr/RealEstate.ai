@@ -11,7 +11,7 @@ const useMarketInsights = () => {
     setInsights(null);
 
     try {
-      const response = await fetch('http://localhost:2082/api/ai/market-insights', {
+      const response = await fetch('https://realestate-ai-wnw0.onrender.com/api/ai/market-insights', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

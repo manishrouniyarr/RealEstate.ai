@@ -151,7 +151,7 @@ const Properties = () => {
       if (filter.property_type) params.append('property_type', filter.property_type);
       if (filter.price_type) params.append('price_type', filter.price_type);
 
-      const res = await fetch(`http://localhost:2082/api/properties?${params}`);
+      const res = await fetch(`https://realestate-ai-wnw0.onrender.com/api/properties?${params}`);
       const data = await res.json();
       if (data.success) setProperties(data.properties);
     } catch (err) {
