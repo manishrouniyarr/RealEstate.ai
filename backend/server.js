@@ -11,7 +11,9 @@ const app = express();
 const PORT = process.env.PORT || 2082;
 
 // Middleware
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://realestate-ai-rs.vercel.app'],
+}));
 app.use(express.json());
 
 // Database connection
