@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './sections/Hero'
 import About from './sections/About'
@@ -10,22 +10,27 @@ import Services from './sections/Services'
 import Footer from './components/Footer'
 import Contact from './sections/Contact'
 import Pricing from './sections/Pricing'
+
 const App = () => {
+  const [heroSearch, setHeroSearch] = useState(null);
+
+  const handleHeroSearch = (formData) => {
+    setHeroSearch(formData);
+  };
+
   return (
     <>
-   
       <Navbar />
-      <Hero />
+      <Hero onSearch={handleHeroSearch} />
       <About />
       <ProblemSolution />
-      <Properties />
+      <Properties heroSearch={heroSearch} />
       <Services />
       <Dashboard />
       <Pricing />
       <Testimonials />
       <Contact />
       <Footer />
-   
     </>
   )
 }

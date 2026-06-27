@@ -26,7 +26,6 @@ const PropertyCard = ({ property, index }) => {
       data-aos-delay={index * 100}
       className='bg-white rounded-xl w-full shadow-sm hover:shadow-md transition-shadow duration-300'
     >
-      {/* Image Box */}
       <div
         className='bg-cover bg-center h-[250px] rounded-xl p-4 flex flex-col justify-between items-end'
         style={{ backgroundImage: `url(${image})` }}
@@ -54,7 +53,6 @@ const PropertyCard = ({ property, index }) => {
         </div>
       </div>
 
-      {/* Info Box */}
       <div className='px-6 py-3 flex flex-col gap-2 w-full'>
         <div className='flex justify-between items-start'>
           <h1 className='text-lg text-black font-semibold leading-tight'>{property.title}</h1>
@@ -72,7 +70,6 @@ const PropertyCard = ({ property, index }) => {
 
         <p className='text-gray-500 text-sm line-clamp-2'>{property.description}</p>
 
-        {/* Stats */}
         <div className='flex items-center gap-4 mt-1'>
           <div className='flex items-center gap-1.5'>
             <FaBath className='text-purple-500' />
@@ -88,7 +85,6 @@ const PropertyCard = ({ property, index }) => {
           </div>
         </div>
 
-        {/* Amenities */}
         {property.amenities?.length > 0 && (
           <div className='flex flex-wrap gap-1 mt-1'>
             {property.amenities.slice(0, 3).map((a, i) => (
@@ -106,7 +102,6 @@ const PropertyCard = ({ property, index }) => {
 
         <div className='w-full h-[1px] bg-gray-200 mt-3' />
 
-        {/* Owner Info */}
         <div className='flex justify-between items-center w-full mt-1'>
           <div className='flex items-center gap-2'>
             <FaUserCircle className='text-purple-500' />
@@ -129,7 +124,7 @@ const PropertyCard = ({ property, index }) => {
   );
 };
 
-const Properties = () => {
+const Properties = ({ heroSearch }) => {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -139,12 +134,24 @@ const Properties = () => {
     AOS.init({ offset: 200, duration: 800, easing: "ease-in-sine", delay: 100 });
   }, []);
 
+  // Apply hero search when it changes
+  useEffect(() => {
+    if (heroSearch) {
+      setFilter({
+        city: heroSearch.location || '',
+        property_type: heroSearch.propertyType || '',
+        price_type: heroSearch.category || '',
+      });
+    }
+  }, [heroSearch]);
+
   useEffect(() => {
     fetchProperties();
   }, [filter]);
 
   const fetchProperties = async () => {
     setLoading(true);
+    setError(null);
     try {
       const params = new URLSearchParams();
       if (filter.city) params.append('city', filter.city);
@@ -166,7 +173,6 @@ const Properties = () => {
       <section id="properties" className="py-24 bg-gradient-to-b from-white to-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          {/* Header */}
           <div className="text-center mb-10" data-aos="zoom-in">
             <span className="px-4 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
               Properties
@@ -182,7 +188,6 @@ const Properties = () => {
             </p>
           </div>
 
-          {/* Filters */}
           <div className='flex flex-wrap gap-3 justify-center mb-10' data-aos="fade-up">
             <select
               value={filter.city}
@@ -224,7 +229,6 @@ const Properties = () => {
             </button>
           </div>
 
-          {/* Loading */}
           {loading && (
             <div className='grid lg:grid-cols-3 grid-cols-1 gap-8'>
               {[1, 2, 3, 4, 5, 6].map(i => (
@@ -233,12 +237,10 @@ const Properties = () => {
             </div>
           )}
 
-          {/* Error */}
           {error && (
             <div className='text-center py-12 text-red-500'>{error}</div>
           )}
 
-          {/* Properties Grid */}
           {!loading && !error && (
             <>
               <p className='text-sm text-gray-400 mb-4 text-center'>
