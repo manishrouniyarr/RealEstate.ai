@@ -11,7 +11,7 @@ const usePricePredictor = () => {
     setPrediction(null);
 
     try {
-      const response = await fetch('https://realestate-ai-wnw0.onrender.com/api/ai/predict-price', {
+      const response = await fetch('https://realestate-ai-wrw0.onrender.com/api/ai/predict-price', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
