@@ -19,6 +19,11 @@ app.use(express.json());
 // Database connection
 connectDB();
 
+// Health check
+app.get('/', (req, res) => {
+  res.json({ message: 'RealEstateAI API is running' });
+});
+
 // Routes
 app.use('/api/properties', propertyRoutes);
 app.use('/api/ai', aiRoutes);
@@ -26,7 +31,7 @@ app.use('/api/ai', aiRoutes);
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).send('Something broke!');
+  res.status(500).json({ error: err.message });
 });
 
 app.listen(PORT, () => {
