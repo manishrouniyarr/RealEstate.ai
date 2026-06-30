@@ -72,11 +72,8 @@ const Hero = ({ darkMode, onSearch }) => {
 
         <div className="relative z-10 max-w-6xl px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6" data-aos="fade-up">
-            <span className="flex justify-center items-center gap-2">
-              <span role="img" aria-label="home">🏡</span>
-              AI Meets Real Estate
-            </span>
-          </h1>
+  AI Meets Real Estate
+</h1>
           <h2 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-400 via-purple-500 to-purple-700 text-transparent bg-clip-text" data-aos="fade-up" data-aos-delay="100">
             Smarter, Faster, Better
           </h2>

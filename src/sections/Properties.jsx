@@ -17,8 +17,15 @@ const formatPrice = (price, currency = 'INR') => {
   return new Intl.NumberFormat('en-US', { style: 'currency', currency, maximumFractionDigits: 0 }).format(num);
 };
 
+const PROPERTY_IMAGES = {
+  Villa: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80',
+  Apartment: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80',
+  House: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80',
+  Commercial: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80',
+};
+
 const PropertyCard = ({ property, index }) => {
-  const image = property.images?.[0] || FALLBACK_IMAGE;
+  const image = PROPERTY_IMAGES[property.property_type] || FALLBACK_IMAGE;
 
   return (
     <div
@@ -30,17 +37,6 @@ const PropertyCard = ({ property, index }) => {
         className='bg-cover bg-center h-[250px] rounded-xl p-4 flex flex-col justify-between items-end'
         style={{ backgroundImage: `url(${image})` }}
       >
-        <div className='flex justify-between items-end w-full'>
-          <button className='px-4 py-1.5 bg-blue-600 hover:bg-white text-white hover:text-blue-800 rounded-full text-sm font-medium border border-blue-600 hover:border-blue-300 transition-all duration-200 shadow-sm'>
-            SmartMapped
-          </button>
-          {property.is_featured && (
-            <span className='px-3 py-1 bg-purple-600 text-white text-xs font-semibold rounded-full'>
-              Featured
-            </span>
-          )}
-        </div>
-
         <div className='flex justify-between items-end w-full'>
           <div className='flex items-center gap-2'>
             <FaMapMarkerAlt className='size-4 text-white' />
