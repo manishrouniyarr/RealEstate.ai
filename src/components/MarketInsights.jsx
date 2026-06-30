@@ -37,21 +37,21 @@ const MarketInsights = () => {
     return (
       <div className="space-y-5">
         {/* Header */}
-        <div className="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl p-6 text-white text-center">
-          <p className="text-indigo-100 text-sm mb-1">Market Analysis for</p>
+        <div className="bg-gradient-to-br from-slate-900 to-blue-700 rounded-2xl p-6 text-white text-center">
+          <p className="text-blue-100 text-sm mb-1">Market Analysis for</p>
           <p className="text-2xl font-bold mb-1">{insights.location}</p>
-          <p className="text-indigo-200 text-sm">{insights.propertyType} · {insights.purpose}</p>
+          <p className="text-blue-200 text-sm">{insights.propertyType} · {insights.purpose}</p>
           <div className="flex justify-center gap-3 mt-4 flex-wrap">
             <div className="bg-white/20 rounded-xl px-4 py-2 text-center">
-              <p className="text-xs text-indigo-100">Market Trend</p>
+              <p className="text-xs text-blue-100">Market Trend</p>
               <p className="text-base font-bold capitalize">{insights.marketTrend}</p>
             </div>
             <div className="bg-white/20 rounded-xl px-4 py-2 text-center">
-              <p className="text-xs text-indigo-100">Investment Score</p>
+              <p className="text-xs text-blue-100">Investment Score</p>
               <p className="text-base font-bold">{insights.investmentScore}/10</p>
             </div>
             <div className="bg-white/20 rounded-xl px-4 py-2 text-center">
-              <p className="text-xs text-indigo-100">Avg Price/sqft</p>
+              <p className="text-xs text-blue-100">Avg Price/sqft</p>
               <p className="text-base font-bold">{insights.avgPricePerSqft}</p>
             </div>
           </div>
@@ -77,8 +77,8 @@ const MarketInsights = () => {
 
         {/* Recommendation */}
         {insights.recommendation && (
-          <div className="bg-indigo-50 border border-indigo-100 rounded-xl p-4">
-            <p className="text-xs font-semibold text-indigo-500 uppercase tracking-wide mb-1">AI Recommendation</p>
+          <div className="bg-blue-50 border border-blue-100 rounded-xl p-4">
+            <p className="text-xs font-semibold text-blue-600 uppercase tracking-wide mb-1">AI Recommendation</p>
             <p className="text-gray-800 text-sm leading-relaxed">{insights.recommendation}</p>
           </div>
         )}
@@ -112,7 +112,7 @@ const MarketInsights = () => {
           onChange={handleChange}
           placeholder="e.g. Bangalore, India"
           required
-          className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
 
@@ -123,7 +123,7 @@ const MarketInsights = () => {
             name="propertyType"
             value={form.propertyType}
             onChange={handleChange}
-            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             {propertyTypes.map((t) => <option key={t}>{t}</option>)}
           </select>
@@ -134,7 +134,7 @@ const MarketInsights = () => {
             name="purpose"
             value={form.purpose}
             onChange={handleChange}
-            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             {purposes.map((p) => <option key={p}>{p}</option>)}
           </select>
@@ -149,7 +149,7 @@ const MarketInsights = () => {
           value={form.budget}
           onChange={handleChange}
           placeholder="e.g. ₹50 Lakhs or $200,000"
-          className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
 
@@ -160,7 +160,7 @@ const MarketInsights = () => {
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 text-white font-semibold py-3 rounded-xl transition-colors text-sm"
+        className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-semibold py-3 rounded-xl transition-colors text-sm"
       >
         {loading ? 'Analyzing market...' : 'Get Market Insights'}
       </button>

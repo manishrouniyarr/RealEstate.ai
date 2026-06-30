@@ -86,8 +86,8 @@ const PricePredictor = () => {
             onClick={() => setForm((prev) => ({ ...prev, priceType: 'rent' }))}
             className={`py-2.5 rounded-xl text-sm font-semibold border transition-colors ${
               form.priceType === 'rent'
-                ? 'bg-purple-600 text-white border-purple-600'
-                : 'bg-white text-gray-600 border-gray-200 hover:border-purple-300'
+                ? 'bg-slate-800 text-white border-slate-800'
+                : 'bg-white text-gray-600 border-gray-200 hover:border-slate-400'
             }`}
           >
             Rent Property
@@ -223,8 +223,8 @@ const PricePredictor = () => {
               onClick={() => toggleItem('nearbyFacilities', f)}
               className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
                 form.nearbyFacilities.includes(f)
-                  ? 'bg-purple-600 text-white border-purple-600'
-                  : 'bg-white text-gray-600 border-gray-200 hover:border-purple-300'
+                  ? 'bg-slate-800 text-white border-slate-800'
+                  : 'bg-white text-gray-600 border-gray-200 hover:border-slate-400'
               }`}
             >
               {f}

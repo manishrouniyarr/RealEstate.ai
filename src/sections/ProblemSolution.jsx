@@ -19,7 +19,7 @@ const ProblemSolution = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
   <div className="text-center mb-12" data-aos="zoom-in">
     <h2 className="text-4xl font-bold mb-4">
-      The <span className="bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">Problem</span> & Our <span className="bg-gradient-to-r from-purple-500 to-purple-700 bg-clip-text text-transparent">Solution</span>
+      The <span className="bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">Problem</span> & Our <span className="bg-gradient-to-r from-blue-600 to-slate-800 bg-clip-text text-transparent">Solution</span>
     </h2>
     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
       We transform complex real estate challenges into opportunities with AI-powered insights.
@@ -80,21 +80,21 @@ const ProblemSolution = () => {
           
           {/* Solutions Column */}
           <div 
-            className="bg-gray-900 rounded-lg shadow-lg p-8 text-white"
+            className="bg-slate-900 rounded-lg shadow-lg p-8 text-white"
             data-aos="zoom-in"
           >
-            <h3 className="text-2xl font-bold mb-8 text-center text-purple-400 transition-all duration-300 hover:scale-105 hover:text-purple-300 cursor-pointer">
+            <h3 className="text-2xl font-bold mb-8 text-center text-blue-400 transition-all duration-300 hover:scale-105 hover:text-blue-300 cursor-pointer">
               Our AI-Powered Solutions
             </h3>
             
             <div className="space-y-8">
               {/* Instant AI Analysis */}
               <div className="flex items-start space-x-4 hover:bg-gray-800 hover:shadow p-4 rounded-lg transition-all">
-                <div className="shrink-0 bg-purple-900/50 p-4 rounded-full">
-                  <Zap className="h-8 w-8 text-purple-400" />
+                <div className="shrink-0 bg-blue-900/50 p-4 rounded-full">
+                  <Zap className="h-8 w-8 text-blue-400" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold mb-2 text-purple-300">Instant AI Analysis</h4>
+                  <h4 className="text-xl font-semibold mb-2 text-blue-300">Instant AI Analysis</h4>
                   <p className="text-gray-300">
                     Process thousands of data points in seconds for immediate property insights.
                   </p>
@@ -103,11 +103,11 @@ const ProblemSolution = () => {
               
               {/* Cost Optimization */}
               <div className="flex items-start space-x-4 hover:bg-gray-800 hover:shadow p-4 rounded-lg transition-all">
-                <div className="shrink-0 bg-purple-900/50 p-4 rounded-full">
-                  <DollarSign className="h-8 w-8 text-purple-400" />
+                <div className="shrink-0 bg-blue-900/50 p-4 rounded-full">
+                  <DollarSign className="h-8 w-8 text-blue-400" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold mb-2 text-purple-300">Cost Optimization</h4>
+                  <h4 className="text-xl font-semibold mb-2 text-blue-300">Cost Optimization</h4>
                   <p className="text-gray-300">
                     AI predicts and prevents costly mistakes before they happen.
                   </p>
@@ -116,11 +116,11 @@ const ProblemSolution = () => {
               
               {/* Regulatory Compliance */}
               <div className="flex items-start space-x-4 hover:bg-gray-800 hover:shadow p-4 rounded-lg transition-all">
-                <div className="shrink-0 bg-purple-900/50 p-4 rounded-full">
-                  <FileText className="h-8 w-8 text-purple-400" />
+                <div className="shrink-0 bg-blue-900/50 p-4 rounded-full">
+                  <FileText className="h-8 w-8 text-blue-400" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold mb-2 text-purple-300">Regulatory Compliance</h4>
+                  <h4 className="text-xl font-semibold mb-2 text-blue-300">Regulatory Compliance</h4>
                   <p className="text-gray-300">
                     Automatically check against current zoning laws and building codes.
                   </p>

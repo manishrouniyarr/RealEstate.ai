@@ -57,7 +57,7 @@ const PropertyCard = ({ property, index }) => {
           </span>
         </div>
 
-        <h1 className='text-2xl text-purple-600 font-bold'>
+        <h1 className='text-2xl text-slate-900 font-bold'>
           {formatPrice(property.price, property.currency)}
           <span className='text-sm font-normal text-gray-400 ml-1'>
             {property.price_type === 'rent' ? '/mo' : ''}
@@ -68,15 +68,15 @@ const PropertyCard = ({ property, index }) => {
 
         <div className='flex items-center gap-4 mt-1'>
           <div className='flex items-center gap-1.5'>
-            <FaBath className='text-purple-500' />
+            <FaBath className='text-blue-600' />
             <span className='text-sm'>{property.bathrooms}</span>
           </div>
           <div className='flex items-center gap-1.5'>
-            <FaBed className='text-purple-500' />
+            <FaBed className='text-blue-600' />
             <span className='text-sm'>{property.bedrooms}</span>
           </div>
           <div className='flex items-center gap-1.5'>
-            <MdSpaceDashboard className='text-purple-500' />
+            <MdSpaceDashboard className='text-blue-600' />
             <span className='text-sm'>{property.area_sqft} sq ft</span>
           </div>
         </div>
@@ -100,18 +100,18 @@ const PropertyCard = ({ property, index }) => {
 
         <div className='flex justify-between items-center w-full mt-1'>
           <div className='flex items-center gap-2'>
-            <FaUserCircle className='text-purple-500' />
+            <FaUserCircle className='text-blue-600' />
             <span className='text-sm'>{property.agent_name}</span>
           </div>
           <div className='flex items-center gap-2'>
             <div className='p-2 border-2 border-gray-200 hover:bg-blue-600 hover:border-blue-600 group cursor-pointer transform hover:scale-110 transition-all duration-300 rounded'>
-              <FaShareAlt className='size-4 text-purple-500 group-hover:text-white' />
+              <FaShareAlt className='size-4 text-blue-600 group-hover:text-white' />
             </div>
             <div className='p-2 border-2 border-gray-200 hover:bg-blue-600 hover:border-blue-600 group cursor-pointer transform hover:scale-110 transition-all duration-300 rounded'>
-              <FiBell className='size-4 text-purple-500 group-hover:text-white' />
+              <FiBell className='size-4 text-blue-600 group-hover:text-white' />
             </div>
             <div className='p-2 border-2 border-gray-200 hover:bg-blue-600 hover:border-blue-600 group cursor-pointer transform hover:scale-110 transition-all duration-300 rounded'>
-              <FaPlus className='size-4 text-purple-500 group-hover:text-white' />
+              <FaPlus className='size-4 text-blue-600 group-hover:text-white' />
             </div>
           </div>
         </div>
@@ -130,7 +130,6 @@ const Properties = ({ heroSearch }) => {
     AOS.init({ offset: 200, duration: 800, easing: "ease-in-sine", delay: 100 });
   }, []);
 
-  // Apply hero search when it changes
   useEffect(() => {
     if (heroSearch) {
       setFilter({
@@ -175,7 +174,7 @@ const Properties = ({ heroSearch }) => {
             </span>
             <h2 className="mt-4 text-3xl md:text-4xl font-bold">
               Explore the Latest{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
                 Listings & Developments
               </span>
             </h2>

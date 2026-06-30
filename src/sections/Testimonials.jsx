@@ -88,7 +88,7 @@ const Testimonials = () => {
             Testimonials
           </span>
           <h2 className="mt-4 text-3xl md:text-4xl font-bold">
-            Success Stories from <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Real Clients</span>
+            Success Stories from <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">Real Clients</span>
           </h2>
           <p className="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
             See how our AI-powered platform is transforming the real estate industry
@@ -109,7 +109,7 @@ const Testimonials = () => {
                         <img 
                           src={testimonial.image} 
                           alt={testimonial.name} 
-                          className="w-24 h-24 rounded-full object-cover border-4 border-indigo-100"
+                          className="w-24 h-24 rounded-full object-cover border-4 border-blue-100"
                         />
                       </div>
                       <div className="flex-1">
@@ -129,7 +129,7 @@ const Testimonials = () => {
                     </div>
                     <div className="mt-6 pt-6 border-t border-slate-100">
                       <div className="flex items-center">
-                        <div className="bg-gradient-to-r from-indigo-500 to-purple-600 p-2 rounded text-white mr-4">
+                        <div className="bg-blue-600 p-2 rounded text-white mr-4">
                           <span className="text-lg font-bold">+25%</span>
                         </div>
                         <p className="text-slate-700">Average ROI improvement with our AI solutions</p>
@@ -143,14 +143,14 @@ const Testimonials = () => {
           
           <button 
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded-full p-3 shadow-lg z-10 text-gray-700 hover:text-indigo-500 md:-translate-x-0"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded-full p-3 shadow-lg z-10 text-gray-700 hover:text-blue-600 md:-translate-x-0"
           >
             <ArrowLeft className="h-6 w-6" />
           </button>
           
           <button 
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 bg-white rounded-full p-3 shadow-lg z-10 text-gray-700 hover:text-indigo-500 md:translate-x-0"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 bg-white rounded-full p-3 shadow-lg z-10 text-gray-700 hover:text-blue-600 md:translate-x-0"
           >
             <ArrowRight className="h-6 w-6" />
           </button>
@@ -162,7 +162,7 @@ const Testimonials = () => {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`h-3 w-3 rounded-full mx-1 ${
-                currentIndex === index ? 'bg-indigo-600' : 'bg-slate-300'
+                currentIndex === index ? 'bg-blue-600' : 'bg-slate-300'
               }`}
             />
           ))}

@@ -16,7 +16,7 @@ const PredictionResult = ({ prediction, currencySymbol = '₹', onReset }) => {
     <div className="space-y-6">
 
       {/* Price Range */}
-      <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-6 text-white text-center">
+      <div className="bg-gradient-to-br from-slate-900 to-blue-700 rounded-2xl p-6 text-white text-center">
         <p className="text-blue-100 text-sm mb-1">
           {isRent ? 'Estimated Monthly Rent' : 'Estimated Purchase Price'}
         </p>

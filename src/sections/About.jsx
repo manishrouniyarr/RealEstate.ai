@@ -37,7 +37,7 @@ const About = () => {
       <div className="order-1 lg:order-2 space-y-8">
         <div>
           <h1 data-aos="fade-right" className="text-blue-600 text-2xl font-bold mb-4">
-            Revolutionizing Real Estate with AI
+            Real Estate Intelligence, Powered by Groq AI
           </h1>
 
           <h2
@@ -48,7 +48,7 @@ const About = () => {
             Welcome to RealEstate AI  making real estate effortless
           </h2>
 
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-400 via-purple-500 to-purple-700 mb-6" />
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-blue-700 mb-6" />
 
           <p data-aos="fade-up" data-aos-delay="200" className="text-slate-600 text-lg leading-relaxed">
             Our platform uses advanced artificial intelligence to help you find, analyze, and invest in properties
@@ -68,7 +68,7 @@ const About = () => {
           <FeatureCard
             title="Intelligent Property Matching"
             description="AI-driven recommendations for your perfect property."
-            headingColor="text-purple-600"
+            headingColor="text-blue-600"
             delay={100}
           />
         </div>

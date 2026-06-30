@@ -74,9 +74,12 @@ const Hero = ({ darkMode, onSearch }) => {
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6" data-aos="fade-up">
   AI Meets Real Estate
 </h1>
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-400 via-purple-500 to-purple-700 text-transparent bg-clip-text" data-aos="fade-up" data-aos-delay="100">
+          {/* <h2 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-400 via-purple-500 to-purple-700 text-transparent bg-clip-text" data-aos="fade-up" data-aos-delay="100">
             Smarter, Faster, Better
-          </h2>
+          </h2> */}
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-blue-700 text-transparent bg-clip-text" data-aos="fade-up" data-aos-delay="100">
+  Smarter, Faster, Better
+</h2>
           <p className="text-xl md:text-2xl text-slate-200 max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="200">
             Make smarter real estate decisions with AI-driven analytics and insights that transform how you invest, develop, and manage properties.
           </p>
