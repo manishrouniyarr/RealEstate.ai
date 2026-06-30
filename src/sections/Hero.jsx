@@ -67,17 +67,15 @@ const Hero = ({ darkMode, onSearch }) => {
       {/* Hero Section */}
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroimg})` }}>
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/70" />
-        </div>
+  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/50 to-slate-900/20" />
+</div>
 
         <div className="relative z-10 max-w-6xl px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6" data-aos="fade-up">
   AI Meets Real Estate
 </h1>
-          {/* <h2 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-400 via-purple-500 to-purple-700 text-transparent bg-clip-text" data-aos="fade-up" data-aos-delay="100">
-            Smarter, Faster, Better
-          </h2> */}
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-blue-700 text-transparent bg-clip-text" data-aos="fade-up" data-aos-delay="100">
+
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text" data-aos="fade-up" data-aos-delay="100">
   Smarter, Faster, Better
 </h2>
           <p className="text-xl md:text-2xl text-slate-200 max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="200">
