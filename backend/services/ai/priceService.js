@@ -68,8 +68,7 @@ Return realistic ${currency} values for the ${location} market.`;
       { role: 'system', content: systemPrompt },
       { role: 'user', content: userPrompt },
     ],
-    response_format: { type: 'json_object' },
-    max_tokens: 1024,
+        max_tokens: 1024,
   });
 
   const rawText = response.choices[0].message.content.trim();
