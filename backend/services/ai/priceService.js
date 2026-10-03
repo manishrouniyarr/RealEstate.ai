@@ -63,7 +63,7 @@ Currency: ${currency}
 Return realistic ${currency} values for the ${location} market.`;
 
   const response = await client.chat.completions.create({
-    model: 'llama3-70b-8192',
+    model: 'openai/gpt-oss-20b',
     messages: [
       { role: 'system', content: systemPrompt },
       { role: 'user', content: userPrompt },
