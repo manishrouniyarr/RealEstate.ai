@@ -43,7 +43,7 @@ Budget: ${budget || 'Not specified'}
 Give realistic, current market analysis for ${location}.`;
 
   const response = await client.chat.completions.create({
-    model: 'llama-3.3-70b-specdec',
+    model: 'llama3-70b-8192',
     messages: [
       { role: 'system', content: systemPrompt },
       { role: 'user', content: userPrompt },

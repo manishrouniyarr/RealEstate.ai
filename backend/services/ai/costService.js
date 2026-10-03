@@ -51,7 +51,7 @@ Additional Notes: ${notes || 'None'}
 Return realistic cost values for the ${location} market.`;
 
   const response = await client.chat.completions.create({
-    model: 'llama-3.3-70b-specdec',
+    model: 'llama3-70b-8192',
     messages: [
       { role: 'system', content: systemPrompt },
       { role: 'user', content: userPrompt },
