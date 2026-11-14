@@ -1,17 +1,17 @@
 import { useState } from 'react';
+import { API_URL } from '../config';
 
 const useMarketInsights = () => {
   const [insights, setInsights] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
   const fetchInsights = async (formData) => {
     setLoading(true);
     setError(null);
     setInsights(null);
 
     try {
-      const response = await fetch('https://realestate-ai-wrw0.onrender.com/api/ai/market-insights', {
+      const response = await fetch(`${API_URL}/api/ai/market-insights`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

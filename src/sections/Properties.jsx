@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import { FaBath, FaBed, FaShareAlt, FaUserCircle, FaPlus, FaMapMarkerAlt, FaVideo, FaCamera } from 'react-icons/fa';
 import { MdSpaceDashboard } from 'react-icons/md';
 import { FiBell } from 'react-icons/fi';
+import { API_URL } from '../config';
 
 const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80';
 
@@ -153,7 +154,7 @@ const Properties = ({ heroSearch }) => {
       if (filter.property_type) params.append('property_type', filter.property_type);
       if (filter.price_type) params.append('price_type', filter.price_type);
 
-      const res = await fetch(`https://realestate-ai-wrw0.onrender.com/api/properties?${params}`);
+      const res = await fetch(`${API_URL}/api/properties?${params}`);
       const data = await res.json();
       if (data.success) setProperties(data.properties);
     } catch (err) {
